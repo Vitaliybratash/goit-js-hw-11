@@ -5,7 +5,7 @@ const axios = require('axios');
 const KEY = '7130529-cd9ea3f018b85a189f3c85b8b';
 const BASE_URL = 'https://pixabay.com/api/';
 
-export async function fetchImg(inputValue , page) {
+export async function fetchImg(inputValue, page) {
   try {
     const response = await axios.get(BASE_URL, {
       params: {
@@ -23,6 +23,8 @@ export async function fetchImg(inputValue , page) {
     }
     return response.data;
   } catch {
-    Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+    Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
   }
 }
